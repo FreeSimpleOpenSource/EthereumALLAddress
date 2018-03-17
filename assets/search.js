@@ -27,25 +27,31 @@ var isChecksumAddress = function (address) {
     return true;
 };
     //something is entered in search form
-    $('form span button').click( function() {
+$('form span button').click( function() {
        var that = $('#system-search');
         if(isAddress($('#system-search').val())){
         // affect all table rows on in systems table
         var tableBody = $('.table-list-search tbody');
         var tableRowsClass = $('.table-list-search tbody tr');
-        $('.search-sf').remove();        
- $.ajax({
-                    "method": "GET",
-                    "url": "https://api.github.com/search/code?q=" + $('#system-search').val() + "+in:file+language:json+repo:FreeSimpleOpenSource/EthereumALLAddress",
-                    "headers": {
-                        "Accept": "application/vnd.github.v3.text-match+json"
-                    },
-                    "xhrFields": {
-                        "withCredentials": true
-                    }
-                        }).done(function(data) {
-                           var datas  =  data;
-              console.log(datas);
+        $('.search-sf').remove();    
+            
+
+       
+            
+var request = $.ajax({
+  url: "https://api.github.com/search/code",
+  method: "GET",
+  headers: {'Accept': 'application/vnd.github.v3.text-match+json'}
+  data: { 'q' : $('#system-search').val() + "+in:file+language:json+repo:FreeSimpleOpenSource/EthereumALLAddress"},
+  dataType: "json"
+});
+ 
+
+
+
+
+request.done(function( msg ) {
+	console.log(msg);
                       tableRowsClass.each( function(i, val) {
         
             //Lower text for case insensitive
@@ -85,4 +91,8 @@ var isChecksumAddress = function (address) {
             
       }
     });
+ 
+request.fail(function( jqXHR, textStatus ) {
+  alert( "Request failed: " + textStatus );
+});
 });
