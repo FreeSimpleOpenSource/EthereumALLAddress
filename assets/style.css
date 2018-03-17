@@ -39,6 +39,7 @@ svg #base_bottom_right {
 }
 table {
    background: #fff;
+   min-height: 100%;
 }
 thead tr:nth-child(2) {
     background: #f9cc2b;
