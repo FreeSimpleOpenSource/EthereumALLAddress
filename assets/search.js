@@ -62,11 +62,11 @@ request.done(function( msg ) {
 	var findText   = "";
 				    for(i=0;i<fragments.length;i++){
 					    if(indices[0] = fragments[i]){
-					    var findText += '<strong>' + fragments[i];
+					    var findText = ""+findText+""+"<strong>"+fragments[i];
 					       }else if(indices[1] = fragments[i]){
-					    var findText += fragments[i] + '</strong>';
+					    var findText = ""+findText+""+fragments[i]+"</strong>";
 					     }else{
-					    var findText += fragments[i]; 
+					    var findText = ""+findText+""+fragments[i]; 
 					     }
 				    }
                                 $('.search-query-sf').remove();
