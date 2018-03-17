@@ -64,7 +64,7 @@ request.done(function( msg ) {
 			    
 				    for(i=0;i<fragments.length;i++){
 					    if(indices[0] == i){
-					    var findText = ""+findText+""+"<strong>"+fragments[i];
+					    var findText = ""+findText+""+"<strong style='color:black;'>"+fragments[i];
 					       }else if(indices[1] == i){
 					    var findText = ""+findText+""+fragments[i]+"</strong>";
 					     }else{
