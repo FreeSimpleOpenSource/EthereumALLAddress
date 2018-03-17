@@ -51,42 +51,40 @@ var request = $.ajax({
 
 
 request.done(function( msg ) {
-	console.log(msg);
-                      tableRowsClass.each( function(i, val) {
-        
-            //Lower text for case insensitive
-            var rowText = $(val).text().toLowerCase();
-            var inputText = $(that).val().toLowerCase();
-                              if(inputText != '')
+	
+                              if(msg.total_count = 1)
                             {
+	var indices    = msg.items[0].text_matches[0].matches[0].indices;
+	var fragment   = msg.items[0].text_matches[0].matches[0].fragment;
+	var itemsdata  = msg.items[0].git_url;
+	var infile     = msg.items[0].name;
+	var fragments  = fragment.split();
+	var findText   = "";
+				    for(i=0;i<fragments.length;i++){
+					    if(indices[0] = fragments[i]){
+					    var findText += '<strong>' + fragments[i];
+					       }else if(indices[1] = fragments[i]){
+					    var findText += fragments[i] + '</strong>';
+					     }else{
+					    var findText += fragments[i]; 
+					     }
+				    }
                                 $('.search-query-sf').remove();
                                 tableBody.prepend('<tr class="search-query-sf"><td colspan="6"><strong>Searching for: "'
-                                    + $(that).val()
+                                    + infile
                                     + '"</strong></td></tr>');
+				tableBody.append('<tr><td>' + findText + '</td><td>' + infile + '</td></tr>');
+				 
                             }
                             else
                             {
                                 $('.search-query-sf').remove();
+				tableBody.prepend('<tr class="search-query-sf"><td colspan="6"><strong>Searching for: "'
+                                    + $(that).val()
+                                    + '"</strong></td></tr>');
+				tableBody.append('<tr class="search-sf"><td class="text-muted" colspan="6">No entries found.</td></tr>');
                             }
-
-                            if( rowText.indexOf( inputText ) == -1 )
-                            {
-                                //hide rows
-                                tableRowsClass.eq(i).hide();
-
-                            }
-                            else
-                            {
-                                $('.search-sf').remove();
-                                tableRowsClass.eq(i).show();
-                            }
-                 });
-        //all tr elements are hidden
-        if(tableRowsClass.children(':visible').length == 0)
-        {
-            tableBody.append('<tr class="search-sf"><td class="text-muted" colspan="6">No entries found.</td></tr>');
-        }
-                         
+              
             });    
 		
 	
