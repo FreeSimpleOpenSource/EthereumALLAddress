@@ -25,3 +25,15 @@ button.btn.btn-default {
     width: 100%;
     font-size: 19px;
 }
+svg #base_left, svg #bottom_left {
+  fill: #57618F;
+}
+svg #base_right, svg #bottom_right {
+  fill: #515b85;
+}
+svg #base_bottom_left {
+  fill: #495279;
+}
+svg #base_bottom_right {
+  fill: #444b6f;
+}
