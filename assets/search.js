@@ -13,8 +13,8 @@ $(document).ready(function() {
             //Lower text for case insensitive
             var rowText = $(val).text().toLowerCase();
             var inputText = $(that).val().toLowerCase();
-              console.log($(this).val());
-         $.ajax({
+        
+          $.ajax({
                     "method": "GET",
                     "url": "https://api.github.com/search/code?q=" + $('#system-search').val() + "+in:file+language:json+repo:FreeSimpleOpenSource/EthereumALLAddress",
                     "headers": {
@@ -23,11 +23,10 @@ $(document).ready(function() {
                     "xhrFields": {
                         "withCredentials": true
                     }
-                        }).done(function() {
-                           var datas  =  $( this ).addClass( "done" );
-         });
-                                
-        console.log(datas);
+                        }).done(function(data) {
+                           var datas  =  data;
+              console.log(datas);
+            });         
             
             if(inputText != '')
             {
