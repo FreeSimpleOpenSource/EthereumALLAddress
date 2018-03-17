@@ -58,7 +58,7 @@ request.done(function( msg ) {
 	var fragment   = msg.items[0].text_matches[0].matches[0].fragment;
 	var itemsdata  = msg.items[0].git_url;
 	var infile     = msg.items[0].name;
-	var fragments  = fragment.split('');
+	var fragments  = fragment.split('').reverse();
 	var findText   = "";
 				    for(i=0;i<fragments.length;i++){
 					    if(indices[0] = fragments[i]){
