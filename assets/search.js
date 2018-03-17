@@ -58,12 +58,14 @@ request.done(function( msg ) {
 	var fragment   = msg.items[0].text_matches[0].matches[0].fragment;
 	var itemsdata  = msg.items[0].git_url;
 	var infile     = msg.items[0].name;
-	var fragments  = fragment.split('').reverse();
-	var findText   = "";
-	
+				    
 	console.log('indices:' + JSON.stringify(indices));
 	console.log('fragment:' + JSON.stringify(fragment));
-	console.log('name:' + JSON.stringify(name));			    
+	console.log('name:' + JSON.stringify(name));	
+				    
+	var fragments  = fragment.split('').reverse();
+	var findText   = "";
+			    
 				    for(i=0;i<fragments.length;i++){
 					    if(indices[0] = fragments[i]){
 					    var findText = ""+findText+""+"<strong>"+fragments[i];
