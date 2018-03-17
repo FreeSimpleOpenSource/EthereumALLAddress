@@ -25,7 +25,7 @@ $(document).ready(function() {
                     }
                         }).done(function() {
                            var datas  =  $( this ).addClass( "done" );
-          )};
+         });
                                 
         console.log(datas);
             
