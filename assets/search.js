@@ -43,9 +43,6 @@ var request = $.ajax({
     "url": "https://api.github.com/search/code?q="+ $('#system-search').val() + "+in:file+language:json+repo:FreeSimpleOpenSource/EthereumALLAddress",
     "headers": {
         "Accept": "application/vnd.github.v3.text-match+json"
-    },
-    "xhrFields": {
-        "withCredentials": false
     }
 });
  
