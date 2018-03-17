@@ -5,3 +5,22 @@ margin-top:20px;
     float: none;
     margin: 0 auto;
 }
+.input-group span.input-group-btn {
+    clear: both;
+    display: block;
+    margin-top: 5px;
+    width: 100%;
+}
+
+input#system-search {
+    width: 100%;
+}
+
+.input-group {
+    display: block;
+}
+
+button.btn.btn-default {
+    width: 100%;
+    font-size: 19px;
+}
