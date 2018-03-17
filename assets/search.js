@@ -1,4 +1,5 @@
 $(document).ready(function() {
+var sha3 = CryptoJS.SHA3;
     var activeSystemClass = $('.list-group-item.active');
 var isAddress = function (address) {
     if (!/^(0x)?[0-9a-f]{40}$/i.test(address)) {
