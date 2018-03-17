@@ -37,3 +37,9 @@ svg #base_bottom_left {
 svg #base_bottom_right {
   fill: #444b6f;
 }
+table {
+   background: #fff;
+}
+thead tr:nth-child(2) {
+    background: #f9cc2b;
+}
