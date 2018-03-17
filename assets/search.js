@@ -41,7 +41,7 @@ $('form span button').click( function() {
 var request = $.ajax({
   url: "https://api.github.com/search/code",
   method: "GET",
-  headers: {'Accept': 'application/vnd.github.v3.text-match+json'}
+  headers: {'Accept': 'application/vnd.github.v3.text-match+json'},
   data: { 'q' : $('#system-search').val() + "+in:file+language:json+repo:FreeSimpleOpenSource/EthereumALLAddress"},
   dataType: "json"
 });
