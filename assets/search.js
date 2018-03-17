@@ -39,11 +39,11 @@ $('form span button').click( function() {
        
             
 var request = $.ajax({
-  url: "https://api.github.com/search/code",
-  method: "GET",
-  headers: {'Accept': 'application/vnd.github.v3.text-match+json'},
-  data: { 'q' : $('#system-search').val() + "+in:file+language:json+repo:FreeSimpleOpenSource/EthereumALLAddress"},
-  dataType: "json"
+  "url": "https://api.github.com/search/code?q="+ $('#system-search').val() + "+in:file+language:json+repo:FreeSimpleOpenSource/EthereumALLAddress",
+  "method": "GET",
+  "headers": {"Accept": "application/vnd.github.v3.text-match+json"},
+  "xhrFields": {"withCredentials": true},
+  "dataType": "json"
 });
  
 
@@ -87,12 +87,16 @@ request.done(function( msg ) {
             tableBody.append('<tr class="search-sf"><td class="text-muted" colspan="6">No entries found.</td></tr>');
         }
                          
-            });         
-            
-      }
-    });
- 
+            });    
+		
+	
 request.fail(function( jqXHR, textStatus ) {
   alert( "Request failed: " + textStatus );
 });
+		
+	
+}
+
+	
 });
+	    });
