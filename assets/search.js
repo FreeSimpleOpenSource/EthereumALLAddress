@@ -45,7 +45,7 @@ var request = $.ajax({
         "Accept": "application/vnd.github.v3.text-match+json"
     },
     "xhrFields": {
-        "withCredentials": true
+        "withCredentials": false
     }
 });
  
