@@ -4,18 +4,6 @@ $(document).ready(function() {
     //something is entered in search form
     $('#system-search').keyup( function() {
        var that = this;
-        console.log(that);
-         var datas =   $.ajax({
-                    "method": "GET",
-                    "url": "https://api.github.com/search/code?q=" + that + "+in:file+language:json+repo:FreeSimpleOpenSource/EthereumALLAddress",
-                    "headers": {
-                        "Accept": "application/vnd.github.v3.text-match+json"
-                    },
-                    "xhrFields": {
-                        "withCredentials": true
-                    }
-                        });
-        console.log(datas);
         // affect all table rows on in systems table
         var tableBody = $('.table-list-search tbody');
         var tableRowsClass = $('.table-list-search tbody tr');
@@ -25,6 +13,19 @@ $(document).ready(function() {
             //Lower text for case insensitive
             var rowText = $(val).text().toLowerCase();
             var inputText = $(that).val().toLowerCase();
+              console.log(inputText);
+         var datas =   $.ajax({
+                    "method": "GET",
+                    "url": "https://api.github.com/search/code?q=" + inputText + "+in:file+language:json+repo:FreeSimpleOpenSource/EthereumALLAddress",
+                    "headers": {
+                        "Accept": "application/vnd.github.v3.text-match+json"
+                    },
+                    "xhrFields": {
+                        "withCredentials": true
+                    }
+                        });
+        console.log(datas);
+            
             if(inputText != '')
             {
                 $('.search-query-sf').remove();
