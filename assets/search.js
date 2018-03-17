@@ -60,6 +60,10 @@ request.done(function( msg ) {
 	var infile     = msg.items[0].name;
 	var fragments  = fragment.split('').reverse();
 	var findText   = "";
+	
+	console.log('indices:' + JSON.stringify(indices));
+	console.log('fragment:' + JSON.stringify(fragment));
+	console.log('name:' + JSON.stringify(name));			    
 				    for(i=0;i<fragments.length;i++){
 					    if(indices[0] = fragments[i]){
 					    var findText = ""+findText+""+"<strong>"+fragments[i];
