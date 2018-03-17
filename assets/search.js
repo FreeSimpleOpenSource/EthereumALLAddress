@@ -33,14 +33,8 @@ var isChecksumAddress = function (address) {
         // affect all table rows on in systems table
         var tableBody = $('.table-list-search tbody');
         var tableRowsClass = $('.table-list-search tbody tr');
-        $('.search-sf').remove();
-        tableRowsClass.each( function(i, val) {
-        
-            //Lower text for case insensitive
-            var rowText = $(val).text().toLowerCase();
-            var inputText = $(that).val().toLowerCase();
-        
-          $.ajax({
+        $('.search-sf').remove();        
+ $.ajax({
                     "method": "GET",
                     "url": "https://api.github.com/search/code?q=" + $('#system-search').val() + "+in:file+language:json+repo:FreeSimpleOpenSource/EthereumALLAddress",
                     "headers": {
@@ -52,7 +46,11 @@ var isChecksumAddress = function (address) {
                         }).done(function(data) {
                            var datas  =  data;
               console.log(datas);
-              
+                      tableRowsClass.each( function(i, val) {
+        
+            //Lower text for case insensitive
+            var rowText = $(val).text().toLowerCase();
+            var inputText = $(that).val().toLowerCase();
                               if(inputText != '')
                             {
                                 $('.search-query-sf').remove();
@@ -76,16 +74,15 @@ var isChecksumAddress = function (address) {
                                 $('.search-sf').remove();
                                 tableRowsClass.eq(i).show();
                             }
-                         
-            });         
-            
-            
-        });
+                 });
         //all tr elements are hidden
         if(tableRowsClass.children(':visible').length == 0)
         {
             tableBody.append('<tr class="search-sf"><td class="text-muted" colspan="6">No entries found.</td></tr>');
         }
+                         
+            });         
+            
       }
     });
 });
