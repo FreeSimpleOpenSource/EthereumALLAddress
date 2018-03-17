@@ -32,6 +32,7 @@ $('form span button').click( function() {
         if(isAddress($('#system-search').val())){
         // affect all table rows on in systems table
         var tableBody = $('.table-list-search tbody');
+	var tableHead = $('.table-list-search thead');
         var tableRowsClass = $('.table-list-search tbody tr');
         $('.search-sf').remove();    
             
@@ -71,8 +72,8 @@ request.done(function( msg ) {
 					     }
 				    }
                                 $('.search-query-sf').remove();
-                                tableBody.prepend('<tr class="search-query-sf"><td colspan="6"><strong>Searching for: "'
-                                    + infile
+                                tableHead.prepend('<tr class="search-query-sf"><td colspan="6"><strong>Searching for: "'
+                                    + $(that).val()
                                     + '"</strong></td></tr>');
 				tableBody.append('<tr><td>' + findText + '</td><td>' + infile + '</td></tr>');
 				 
