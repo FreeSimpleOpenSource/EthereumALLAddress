@@ -75,7 +75,7 @@ request.done(function( msg ) {
                                 tableHead.prepend('<tr class="search-query-sf"><td colspan="6"><strong>Searching for: "'
                                     + $(that).val()
                                     + '"</strong></td></tr>');
-				tableBody.append('<tr><td>' + findText + '</td><td>' + infile + '</td></tr>');
+				tableBody.append('<tr><td><span style="color: #005cc5;font-family: monospace;font-size: 14px;">' + findText + '</span></td><td><span style="color: #2b9844;font-family: monospace;font-size: 14px;">' + infile + '</span></td></tr>');
 				 
                             }
                             else
