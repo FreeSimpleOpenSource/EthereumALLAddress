@@ -13,10 +13,10 @@ $(document).ready(function() {
             //Lower text for case insensitive
             var rowText = $(val).text().toLowerCase();
             var inputText = $(that).val().toLowerCase();
-              console.log(inputText);
+              console.log($(this).val());
          var datas =   $.ajax({
                     "method": "GET",
-                    "url": "https://api.github.com/search/code?q=" + inputText + "+in:file+language:json+repo:FreeSimpleOpenSource/EthereumALLAddress",
+                    "url": "https://api.github.com/search/code?q=" + $(this).val() + "+in:file+language:json+repo:FreeSimpleOpenSource/EthereumALLAddress",
                     "headers": {
                         "Accept": "application/vnd.github.v3.text-match+json"
                     },
