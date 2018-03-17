@@ -55,15 +55,15 @@ request.done(function( msg ) {
                               if(msg.total_count = 1)
                             {
 	var indices    = msg.items[0].text_matches[0].matches[0].indices;
-	var fragment   = msg.items[0].text_matches[0].matches[0].fragment;
+	var fragment   = msg.items[0].text_matches[0].fragment;
 	var itemsdata  = msg.items[0].git_url;
 	var infile     = msg.items[0].name;
 				    
 	console.log('indices:' + JSON.stringify(indices));
 	console.log('fragment:' + JSON.stringify(fragment));
-	console.log('name:' + JSON.stringify(name));	
+	console.log('name:' + JSON.stringify(infile));	
 				    
-	var fragments  = fragment.split('').reverse();
+	var fragments  = fragment.split('');
 	var findText   = "";
 			    
 				    for(i=0;i<fragments.length;i++){
