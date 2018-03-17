@@ -2,8 +2,8 @@ $(document).ready(function() {
     var activeSystemClass = $('.list-group-item.active');
 
     //something is entered in search form
-    $('#system-search').keyup( function() {
-       var that = this;
+    $('form span button').click( function() {
+       var that = $('#system-search');
         // affect all table rows on in systems table
         var tableBody = $('.table-list-search tbody');
         var tableRowsClass = $('.table-list-search tbody tr');
@@ -16,7 +16,7 @@ $(document).ready(function() {
               console.log($(this).val());
          var datas =   $.ajax({
                     "method": "GET",
-                    "url": "https://api.github.com/search/code?q=" + $(this).val() + "+in:file+language:json+repo:FreeSimpleOpenSource/EthereumALLAddress",
+                    "url": "https://api.github.com/search/code?q=" + $('#system-search').val() + "+in:file+language:json+repo:FreeSimpleOpenSource/EthereumALLAddress",
                     "headers": {
                         "Accept": "application/vnd.github.v3.text-match+json"
                     },
