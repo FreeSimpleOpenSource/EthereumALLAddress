@@ -39,11 +39,14 @@ $('form span button').click( function() {
        
             
 var request = $.ajax({
-  "url": "https://api.github.com/search/code?q="+ $('#system-search').val() + "+in:file+language:json+repo:FreeSimpleOpenSource/EthereumALLAddress",
-  "method": "GET",
-  "headers": {"Accept": "application/vnd.github.v3.text-match+json", "access-control-allow-origin": "*", "Accept-Encoding": "gzip, deflate, br", "Accept-Language": "en,tr-TR;q=0.9,tr;q=0.8,en-US;q=0.7", "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.10.25.119 Safari/537.36"},
-  "xhrFields": {"withCredentials": true},
-  "dataType": "json"
+	"method": "GET",
+    "url": "https://api.github.com/search/code?q="+ $('#system-search').val() + "+in:file+language:json+repo:FreeSimpleOpenSource/EthereumALLAddress",
+    "headers": {
+        "Accept": "application/vnd.github.v3.text-match+json"
+    },
+    "xhrFields": {
+        "withCredentials": true
+    }
 });
  
 
