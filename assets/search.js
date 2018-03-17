@@ -14,7 +14,7 @@ $(document).ready(function() {
             var rowText = $(val).text().toLowerCase();
             var inputText = $(that).val().toLowerCase();
               console.log($(this).val());
-         var datas =   $.ajax({
+         $.ajax({
                     "method": "GET",
                     "url": "https://api.github.com/search/code?q=" + $('#system-search').val() + "+in:file+language:json+repo:FreeSimpleOpenSource/EthereumALLAddress",
                     "headers": {
@@ -23,7 +23,10 @@ $(document).ready(function() {
                     "xhrFields": {
                         "withCredentials": true
                     }
-                        });
+                        }).done(function() {
+                           var datas  =  $( this ).addClass( "done" );
+          )};
+                                
         console.log(datas);
             
             if(inputText != '')
